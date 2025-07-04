@@ -1,0 +1,404 @@
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: clamp(60px, 8vh, 88px);
+    padding: clamp(12px, 2vh, 24px) clamp(20px, 8vw, 116px);
+    gap: clamp(20px, 12vw, 194px);
+    border-bottom-width: 1px;
+    backdrop-filter: blur(8px);
+    background: #FEFFF6;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-container {
+    width: min(1280px, 90vw);
+    height: clamp(32px, 5vh, 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6366f1;
+    text-decoration: none;
+}
+
+.nav-menu {
+    width: 499px;
+    height: 32px;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #6366f1;
+}
+
+.nav-contact {
+    width: 245px;
+    height: 40px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+/* Mega Menu Dropdown */
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Mega Menu */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 310%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+    width: 1232px;
+    height: 299px;
+    padding: 40px;
+    background-color: #fefff8f5;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 16px;
+    -webkit-transform: translateX(-50%) translateY(-50px);
+    -moz-transform: translateX(-50%) translateY(-50px);
+    -ms-transform: translateX(-50%) translateY(-50px);
+    -o-transform: translateX(-50%) translateY(-50px);
+}
+
+.mega-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-container {
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 16px;
+width: 1152px;
+height: 219px;
+padding: 0px;
+}
+
+.mega-menu-column {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 32px;
+width: 276px;
+height: 219px;
+padding: 0px;
+}
+
+.mega-menu-column-right {
+    border-left: 1px solid #E5E7EB;
+    padding-left: 40px;
+    margin-left: -40px;
+}
+
+.mega-menu-category {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.mega-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mega-menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1F2937;
+    transition: all 0.2s ease;
+}
+
+.mega-menu-item:hover {
+    transform: translateX(4px);
+}
+
+.menu-item-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.menu-item-content {
+    flex: 1;
+}
+
+.menu-item-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1F2937;
+    display: block;
+}
+
+/* Overlay for closing dropdown */
+.mega-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 999;
+    display: none;
+}
+
+.mega-menu-overlay.active {
+    display: block;
+}
+
+/* Update existing nav-item hover */
+.nav-item.dropdown:hover .nav-link {
+    color: #007135;
+}
+
+/* Engagement Suits Dropdown Specific Styles */
+#engagement-mega-menu {
+    width: 920px;
+    min-width: 920px;
+    left: 50%;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+#engagement-mega-menu .mega-menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0;
+    height: auto;
+    flex-direction: unset;
+}
+
+#engagement-mega-menu .mega-menu-column {
+    width: 100%;
+    height: auto;
+    gap: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#engagement-mega-menu .mega-menu-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#engagement-mega-menu .mega-menu-item {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 0;
+    transition: all 0.2s ease;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: none;
+}
+
+#engagement-mega-menu .mega-menu-item:hover {
+    background: #f8f9fa;
+    border-color: rgba(26,92,58,0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px -8px rgba(0,0,0,0.1);
+}
+
+#engagement-mega-menu .menu-item-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+#engagement-mega-menu .menu-item-desc {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Engagement Suits Dropdown Styles */
+.engagement-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    min-width: 920px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-8px);
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    z-index: 1001;
+    margin-top: 0.75rem;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.engagement-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-header {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 1.75rem;
+    padding-left: 0.25rem;
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.dropdown-item {
+    background: #fafafa;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item:hover {
+    background: #f8f9fa;
+    border-color: rgba(26,92,58,0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px -8px rgba(0,0,0,0.1);
+}
+
+.dropdown-item h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-item p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-item::after {
+    content: "→";
+    position: absolute;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    font-size: 16px;
+    color: #d1d5db;
+    transition: all 0.2s ease;
+    z-index: 1;
+}
+
+.dropdown-item:hover::after {
+    color: #1a5c3a;
+    transform: translateX(2px);
+}
+

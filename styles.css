@@ -1,0 +1,847 @@
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: min(1200px, 90vw);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+}
+
+
+
+.cta-btn-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 173px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+}
+
+.cta-btn-small button {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 116%;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fefff6;
+    background-color: #156D3E;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.cta-btn-small:hover button {
+    background-color: #0f5530;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.language-toggle {
+    width: 59px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-toggle select {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background: #FEFFF6;
+    font: 12px 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: clamp(60px, 10vh, 80px);
+    background: #fffff6;
+}
+
+.hero-container {
+    width: min(1416px, 95vw);
+    height: clamp(400px, 80vh, 640px);
+    border-radius: clamp(12px, 2vw, 20px);
+    position: relative;
+    margin: 0 auto;
+    background-image: url('assets/Images/maincntnr.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    width: 1280px;
+    height: 284px;
+    gap: 24px;
+    position: absolute;
+    top: 244px;
+    left: 68px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    color: #000000;
+    background: transparent;
+}
+
+.hero-title {
+    width: 1280px;
+    height: 148px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     background: transparent;
+}
+
+.highlight {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color:#FEFFF6;
+     background: transparent;
+;
+}
+
+.hero-description {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 148%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FEFFF6;
+    margin: 0;
+     background: transparent;
+}
+
+.hero-buttons {
+    width: 1280px;
+    height: 56px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+     background: transparent;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 52px;
+    padding: 20px 24px;
+    background-color: #156D3E;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    color: #fefff6;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0f5530;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+.marquee-wrapper {
+    width: 100vw;
+    height: 96px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffff6;
+}
+
+.marquee-wrapper-content {
+    width: 1280px;
+    height: 56px;
+    gap: 48px;
+    border-bottom-width: 1px;
+    display: grid;
+    grid-template-columns: 192px 1fr;
+    align-items: center;
+    background: transparent;
+}
+
+.marquee-text {
+    width: 192px;
+    height: 34px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    grid-column: 1;
+}
+
+.marquee-text span {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 124%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    opacity: 0.6;
+}
+
+.marquee-animation-area {
+    grid-column: 2;
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-content {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: transparent;
+}
+
+.marquee-content img {
+    height: 80px;
+    margin: 0 30px;
+    vertical-align: middle;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* New Hero Section 3 */
+.herosec-hero3 {
+    width: 100vw;
+    display: flex;
+    padding: 144px 0px 48px 0px;
+    z-index: 2;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    background-color: rgba(254, 255, 246, 1);
+    margin: 0 auto;
+    
+}
+
+.herosec-maincntnr2 {
+    gap: clamp(32px, 8vw, 64px);
+    width: min(1280px, 90vw);
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+}
+
+.herosec-left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(24px, 4vw, 32px);
+    width: min(632px, 90vw);
+    height: auto;
+    min-height: clamp(300px, 50vh, 416px);
+    padding: 0px;
+}
+
+.herosec-right-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.herosec-texts {
+    gap: 12px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.herosec-text24 {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.159999966621399;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.herosec-text28 {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 400;
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.4800000190734863;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    opacity: 0.60;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.herosec-service-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 16px);
+    width: 100%;
+    max-width: 632px;
+    height: auto;
+    min-height: 96px;
+    padding: 0px clamp(16px, 4vw, 32px) 0px 0px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 189px;
+    height: 96px;
+    padding: 48px 14px 8px 16px;
+    background-color: rgba(20, 40, 29, 0.08);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #185B371F;
+}
+
+.service-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0px;
+    background: transparent;
+}
+
+.service-title-content {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.159999966621399;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    background: transparent;
+}
+
+.service-arrow {
+    font-size: 14px;
+    color: #000000;
+    transition: transform 0.1s ease;
+    display: inline-block;
+    background: transparent;
+}
+
+.service-card:hover .service-arrow {
+    transform: translateX(4px) scale(1.1);
+}
+
+.herosec-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+
+
+/* Section 1: Launch Faster, Grow Smarter */
+.launch-section {
+    width: 100vw;
+    display: flex;
+    padding: 48px 0px 48px 0px;
+    z-index: 2;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    background-color: rgba(254, 255, 246, 1);
+    margin: 0 auto;
+}
+
+.launch-container {
+    gap: clamp(32px, 8vw, 64px);
+    width: min(1280px, 90vw);
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+}
+
+.launch-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+}
+
+.launch-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    width: 632px;
+    height: 416px;
+    padding: 0px;
+}
+
+.launch-texts {
+    gap: 12px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.launch-title {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 48px ;
+    line-height: 1.159999966621399;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.launch-subtitle {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4800000190734863;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    opacity: 0.60;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.launch-service-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    width: 632px;
+    height: 96px;
+    padding: 0px 32px 0px 0px;
+}
+
+.launch-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/* Section 2: Start Small, Scale Big */
+.scale-section {
+    width: 100vw;
+    display: flex;
+    padding: 48px 0px 48px 0px;
+    z-index: 2;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    background-color: rgba(254, 255, 246, 1);
+    margin: 0 auto;
+}
+
+.scale-container {
+    gap: 64px;
+    width: 1280px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+}
+
+.scale-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    width: 632px;
+    height: 416px;
+    padding: 0px;
+}
+
+.scale-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+}
+
+.scale-texts {
+    gap: 12px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.scale-title {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.159999966621399;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.scale-subtitle {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4800000190734863;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    opacity: 0.60;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.scale-service-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    width: 632px;
+    height: 96px;
+    padding: 0px 32px 0px 0px;
+}
+
+.scale-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/* Section 3: Local Knowledge, Global Excellence */
+.knowledge-section {
+    width: 100vw;
+    display: flex;
+    padding: 48px 0px 144px 0px;
+    z-index: 2;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    background-color: rgba(254, 255, 246, 1);
+    margin: 0 auto;
+}
+
+.knowledge-container {
+    gap: 64px;
+    width: 1280px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+}
+
+.knowledge-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+}
+
+.knowledge-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    width: 632px;
+    height: 416px;
+    padding: 0px;
+}
+
+.knowledge-texts {
+    gap: 12px;
+    display: flex;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.knowledge-title {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.159999966621399;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.knowledge-subtitle {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4800000190734863;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    opacity: 0.60;
+    height: auto;
+    align-self: stretch;
+    font-style: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+
+.knowledge-service-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    width: 632px;
+    height: 96px;
+    padding: 0px 32px 0px 0px;
+}
+
+.knowledge-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .herosec-maincntnr2,
+            .launch-container,
+            .knowledge-container,
+            .scale-container {
+                flex-direction: column;
+                gap: clamp(24px, 6vw, 48px);
+                text-align: center;
+            }
+
+            .herosec-left-content,
+            .launch-right,
+            .knowledge-right,
+            .scale-left {
+                width: 100%;
+                max-width: none;
+            }
+
+            .herosec-service-cards,
+            .launch-service-cards,
+            .knowledge-service-cards,
+            .scale-service-cards {
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                gap: 12px;
+            }
+
+            .service-card {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: clamp(8px, 2vh, 16px) clamp(16px, 4vw, 32px);
+            }
+
+            .nav-container {
+                width: 100%;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .herosec-hero3,
+            .launch-section,
+            .knowledge-section,
+            .scale-section {
+                padding: clamp(32px, 8vh, 64px) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .herosec-text24,
+            .launch-title,
+            .knowledge-title,
+            .scale-title {
+                font-size: clamp(24px, 8vw, 32px);
+            }
+
+            .herosec-text28,
+            .launch-subtitle,
+            .knowledge-subtitle,
+            .scale-subtitle {
+                font-size: clamp(12px, 4vw, 14px);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
