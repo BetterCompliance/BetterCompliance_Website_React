@@ -2,6 +2,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize only needed functionality
     initSmoothScrolling();
+    var splide = new Splide('.splide', {
+        type   : 'loop',
+        perPage: 3,
+        focus  : 'center',
+        gap: '24px',
+        padding: { left: '10%', right: '10%' },
+        pagination: true,
+        arrows: true,
+        breakpoints: {
+            1024: { perPage: 2, padding: { left: '5%', right: '5%' } },
+            600: { perPage: 1, padding: { left: '10%', right: '10%' } }
+        }
+    });
+    splide.mount();
 });
 
 // Smooth Scrolling for Navigation Links

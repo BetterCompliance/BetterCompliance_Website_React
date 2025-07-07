@@ -19,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+<link rel="stylesheet" href="url-to-cdn/splide.min.css">
 </head>
 <body>
     <!-- Updated Navigation with Solutions Dropdown -->
@@ -29,9 +33,7 @@
         </div>
         <ul class="nav-menu">
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="solutions-dropdown">
-                    Solutions 
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                <a href="#" class="nav-link dropdown-toggle" id="solutions-dropdown">Solutions                    <i class="fas fa-chevron-down dropdown-arrow"></i>
                 </a>
                 <!-- Mega Menu Dropdown -->
                 <div class="mega-menu" id="solutions-mega-menu">
@@ -515,6 +517,65 @@ expanding boldly into India.</span></div>
         </div>
     </section> -->
 
+<!-- Splide scrolling Section -->
+ 
+<section class="splide" role="group" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+        <div class="splide__list-container">
+            <div class="splide__list-h1">
+                <h1>Where we can <br>
+                    make a difference.</h1>
+            </div>
+            <div class="splide__list-p">
+                <p>We partner with future-focused businesses across diverse industries— streamlining operations, enhancing compliance, and unlocking growth.</p>
+            </div>
+        </div>
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="slider-card">
+            <img src="assets/Images/imgcntnr.svg" alt="Health Care" class="slider-card-img">
+            <div class="slider-card-overlay"></div>
+            <div class="slider-card-content">
+              <div class="slider-card-number">001</div>
+              <div class="slider-card-category">Health<br>Care</div>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider-card">
+            <img src="assets/Images/imgcntnr (1).svg" alt="Finance" class="slider-card-img">
+            <div class="slider-card-overlay"></div>
+            <div class="slider-card-content">
+              <div class="slider-card-number">002</div>
+              <div class="slider-card-category">Finance</div>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider-card">
+            <img src="assets/Images/imgcntnr (2).svg" alt="Office" class="slider-card-img">
+            <div class="slider-card-overlay"></div>
+            <div class="slider-card-content">
+              <div class="slider-card-number">003</div>
+              <div class="slider-card-category">Office</div>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slider-card">
+            <img src="assets/Images/imgcntnr (3).svg" alt="Workforce" class="slider-card-img">
+            <div class="slider-card-overlay"></div>
+            <div class="slider-card-content">
+              <div class="slider-card-number">004</div>
+              <div class="slider-card-category">Workforce</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
     <!-- Footer -->
  <div class="footer-wrapper">
         <div class="section-separator"></div>
@@ -647,6 +708,7 @@ expanding boldly into India.</span></div>
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="script.js"></script>
     <script src="scripts\header.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -655,6 +717,7 @@ expanding boldly into India.</span></div>
            
         });
     </script>
+    
 </body>
 </html>
 
