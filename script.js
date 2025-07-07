@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize only needed functionality
     initSmoothScrolling();
+    initTestimonialsMarquee();
+
     var splide = new Splide('.splide', {
         type   : 'loop',
         perPage: 3,
@@ -32,6 +34,34 @@ function initSmoothScrolling() {
                 });
             }
         });
+    });
+}
+
+// Testimonials Marquee Functionality
+function initTestimonialsMarquee() {
+    const track = document.querySelector('.testimonials-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+
+    if (!track || cards.length === 0) return;
+
+    // Add individual hover listeners to each card
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            track.style.animationPlayState = 'paused';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            track.style.animationPlayState = 'running';
+        });
+    });
+
+    // Also add hover listeners to the track itself for extra coverage
+    track.addEventListener('mouseenter', function() {
+        this.style.animationPlayState = 'paused';
+    });
+
+    track.addEventListener('mouseleave', function() {
+        this.style.animationPlayState = 'running';
     });
 }
 
