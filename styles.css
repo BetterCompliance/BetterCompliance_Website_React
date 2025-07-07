@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 html {
@@ -19,14 +18,6 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
-.container {
-    max-width: min(1200px, 90vw);
-    margin: 0 auto;
-    padding: 0 clamp(20px, 4vw, 40px);
-}
-
-
 
 .cta-btn-small {
     display: flex;
@@ -448,9 +439,6 @@ body {
     display: block;
 }
 
-
-
-
 /* Section 1: Launch Faster, Grow Smarter */
 .launch-section {
     width: 100vw;
@@ -552,7 +540,6 @@ body {
     display: block;
 }
 
-
 /* Section 2: Start Small, Scale Big */
 .scale-section {
     width: 100vw;
@@ -653,7 +640,6 @@ body {
     border-radius: 12px;
     display: block;
 }
-
 
 /* Section 3: Local Knowledge, Global Excellence */
 .knowledge-section {
