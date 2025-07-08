@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const engagementMegaMenu = document.getElementById('engagement-mega-menu');
     const engagementDropdownItem = engagementDropdown ? engagementDropdown.closest('.dropdown') : null;
 
+    // Company Dropdown
+    const companyDropdownItem = document.querySelector('.company-dropdown');
+    const companyMenu = companyDropdownItem ? companyDropdownItem.querySelector('.company-menu') : null;
+    const companyDropdown = companyDropdownItem ? companyDropdownItem.querySelector('.dropdown-toggle') : null;
+
     // Generic dropdown functions
     function openDropdown(dropdownItem, megaMenu) {
         // Close any other open dropdowns first
@@ -39,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (engagementDropdownItem && engagementMegaMenu) {
             engagementDropdownItem.classList.remove('active');
             engagementMegaMenu.classList.remove('active');
+        }
+        if (companyDropdownItem) {
+            companyDropdownItem.classList.remove('active');
         }
         overlay.classList.remove('active');
     }
@@ -105,5 +113,84 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeDropdown(engagementDropdownItem, engagementMegaMenu);
             }
         }
+        if (companyDropdownItem && !companyDropdownItem.contains(e.target)) {
+            if (companyDropdownItem.classList.contains('active')) {
+                closeDropdown(companyDropdownItem, companyMenu);
+            }
+        }
     });
+
+    // Company Dropdown Event Listeners
+    if (companyDropdown && companyDropdownItem) {
+        companyDropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isActive = companyDropdownItem.classList.contains('active');
+
+            if (isActive) {
+                closeDropdown(companyDropdownItem, companyMenu);
+            } else {
+                openDropdown(companyDropdownItem, companyMenu);
+            }
+        });
+
+        if (companyMenu) {
+            companyMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }
+
+    // Smooth scroll to top functionality
+    function smoothScrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Logo click - scroll to top
+    const logo = document.querySelector('.nav-logo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollToTop();
+        });
+    }
+
+    // Also handle logo image/link clicks
+    const logoLink = document.querySelector('.nav-logo a');
+    const logoImg = document.querySelector('.nav-logo img');
+
+    if (logoLink) {
+        logoLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollToTop();
+        });
+    }
+
+    if (logoImg) {
+        logoImg.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollToTop();
+        });
+    }
+});
+
+// Smooth scroll to top on page refresh/load
+window.addEventListener('load', function() {
+    // Small delay to ensure page is fully loaded
+    setTimeout(function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, 100);
+});
+
+// Also handle page refresh (beforeunload)
+window.addEventListener('beforeunload', function() {
+    // Set scroll position to top for next load
+    window.scrollTo(0, 0);
 });

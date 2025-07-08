@@ -24,11 +24,20 @@
     margin: 0 auto;
 }
 
+.nav-logo {
+    cursor: pointer;
+}
+
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
     color: #6366f1;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-logo img {
+    cursor: pointer;
 }
 
 .nav-menu {
@@ -95,7 +104,7 @@
     position: absolute;
     top: 100%;
     left: 310%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50px);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -109,16 +118,14 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-50%) translateY(-50px);
     transition: all 0.3s ease;
     z-index: 1000;
-    margin-top: 16px;
+    margin-top: 50px;
     -webkit-transform: translateX(-50%) translateY(-50px);
     -moz-transform: translateX(-50%) translateY(-50px);
     -ms-transform: translateX(-50%) translateY(-50px);
     -o-transform: translateX(-50%) translateY(-50px);
 }
-
 .mega-menu.active {
     opacity: 1;
     visibility: visible;
@@ -128,7 +135,7 @@
 .mega-menu-container {
     display: flex;
 flex-direction: row;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 gap: 16px;
 width: 1152px;
@@ -175,7 +182,7 @@ padding: 0px;
     align-items: flex-start;
     gap: 12px;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 26px;
     text-decoration: none;
     color: #1F2937;
     transition: all 0.2s ease;
@@ -198,10 +205,11 @@ padding: 0px;
 
 .menu-item-content {
     flex: 1;
+    font-family: 'raleway';
 }
 
 .menu-item-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'raleway';
     font-weight: 500;
     font-size: 14px;
     line-height: 1.4;
@@ -231,40 +239,40 @@ padding: 0px;
 }
 
 /* Engagement Suits Dropdown Specific Styles */
-.engagement-mega-menu, #engagement-mega-menu {
-   position: absolute;
-   top: 100%;
-   left: 310%;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   gap: 96px;
-   width: 1279px;
-   height: 335px;
-   padding: 40px;
-   background-color: rgba(254, 255, 248, 0.96);
-   border-radius: 20px;
-   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-   opacity: 0;
-   visibility: hidden;
-   transform: translateX(-50%) translateY(-50px);
-   transition: all 0.3s ease;
-   z-index: 1000;
-   margin-top: 16px;
-   -webkit-transform: translateX(-50%) translateY(-50px);
-   -moz-transform: translateX(-50%) translateY(-50px);
-   -ms-transform: translateX(-50%) translateY(-50px);
-   -o-transform: translateX(-50%) translateY(-50px);
+.engagement-mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translateX(-50%) translateY(-50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+    width: 1232px;
+    height: 299px;
+    padding: 40px;
+    background-color: #fefff8f5;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 50px;
+    -webkit-transform: translateX(-50%) translateY(-50px);
+    -moz-transform: translateX(-50%) translateY(-50px);
+    -ms-transform: translateX(-50%) translateY(-50px);
+    -o-transform: translateX(-50%) translateY(-50px);
 }
 
-.engagement-mega-menu.active, #engagement-mega-menu.active {
+.engagement-mega-menu.active {
    opacity: 1;
    visibility: visible;
    transform: translateX(-50%) translateY(0);
 }
 
-.engagement-mega-menu .mega-menu-container, #engagement-mega-menu .mega-menu-container {
+.engagement-mega-menu .mega-menu-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -275,7 +283,7 @@ padding: 0px;
     padding: 0px;
 }
 
-.engagement-mega-menu .mega-menu-column, #engagement-mega-menu .mega-menu-column {
+.engagement-mega-menu .mega-menu-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -283,27 +291,26 @@ padding: 0px;
     gap: 16px;
     width: 1199px;
     height: 255px;
-    padding: 0px;
+    padding: 16px;
 }
 
-.engagement-mega-menu .mega-menu-items, #engagement-mega-menu .mega-menu-items {
+.engagement-mega-menu .mega-menu-items {
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 0;
+    gap: 16px;
 }
 
-.engagement-mega-menu .mega-menu-item, #engagement-mega-menu .mega-menu-item {
+.engagement-mega-menu .mega-menu-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 16px;
-    width: 382px;
+    width: 403px;
     height: 224px;
     padding: 48px 24px 24px 24px;
-    background-color: #ebf1e8;
-    border-radius: 12px;
+    background-color: #EBF1E8;
     border: 1px solid rgba(0,0,0,0.04);
     transition: all 0.2s ease;
     margin-bottom: 0;
@@ -318,6 +325,143 @@ padding: 0px;
     text-transform: uppercase;
     color: #9CA3AF;
     margin: 0;
+}
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.eng-menu-item-title{
+    display: flex;
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.159999966621399;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.menu-item-desc{
+    font-family: 'Plus Jakarta Sans';
+font-weight: 400;
+font-size: 14px;
+line-height: 1.2400000095367432;
+letter-spacing: 0em;
+text-align: left;
+color: #000000;
+opacity: 60%;
+display: flex;
+margin-bottom: 10px;
+}
+
+.menu-item-arrow {
+    display: block;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 8px;
+    margin-left: 0;
+    transition: margin-left 0.1s cubic-bezier(0.4,0,0.2,1);
+}
+
+
+
+.company-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-80%) translateY(32px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 72px;
+    width: 576px;
+    min-height: 120px;
+    padding: 40px;
+    background-color: rgba(254, 255, 248, 0.96);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 16px;
+    -webkit-transform: translateX(-50%) translateY(-50px);
+    -moz-transform: translateX(-50%) translateY(-50px);
+    -ms-transform: translateX(-50%) translateY(-50px);
+    -o-transform: translateX(-50%) translateY(-50px);
+}
+.nav-item.dropdown.active > .company-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-80%) translateY(32px);
+}
+
+.company-menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 72px;
+    width: 496px;
+    min-height: 80px;
+    padding: 0px;
+}
+
+.company-menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 180px;
+    width: 50%;
+}
+
+.company-menu-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #9CA3AF;
     margin-bottom: 8px;
 }
 
+.company-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Raleway',sans-serif;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+
+.company-menu-arrow {
+    font-size: 14px;
+    margin-left: 8px !important;
+    transform: translateX(0px);
+    transition: all 0.1s ease !important;
+    color: #000;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.5;
+    -webkit-transition: all 0.1s ease !important;
+    -moz-transition: all 0.1s ease !important;
+    -ms-transition: all 0.1s ease !important;
+    -o-transition: all 0.1s ease !important;
+}
+
+/* Company menu hover effect - clean arrow slide animation */
+.company-menu-item:hover .company-menu-arrow {
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+}

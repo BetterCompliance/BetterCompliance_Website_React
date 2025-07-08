@@ -993,7 +993,7 @@ body {
 .testimonials-track {
   display: flex;
   gap: 32px;
-  animation: marquee 40s linear infinite;
+  animation: marquee 20s linear infinite;
   width: max-content;
 }
 
