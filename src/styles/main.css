@@ -1,22 +1,21 @@
-/* Global Styles - Prevent text selection and cursor blinking */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Professional smooth scrolling behavior */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Account for fixed header */
+    scroll-padding-top: 100px;
 }
 
 body {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* Prevent text selection and cursor blinking on clickable elements */
+/* Prevent text selection on interactive elements */
 button,
 .service-card,
 .nav-link,
@@ -36,7 +35,6 @@ button,
     outline: none;
 }
 
-/* Remove focus outline on all interactive elements */
 *:focus {
     outline: none;
 }
@@ -44,13 +42,10 @@ button,
 /* CTA Button Styles */
 .cta-btn-small {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4px;
     width: 173px;
     height: 40px;
-    padding: 0;
     background: transparent;
     border: none;
     border-radius: 8px;
@@ -61,7 +56,6 @@ button,
     font-weight: 500;
     font-size: 14px;
     line-height: 116%;
-    letter-spacing: 0;
     text-align: center;
     color: #fefff6;
     background-color: #156D3E;
@@ -326,38 +320,23 @@ button,
 
 .herosec-service-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
     gap: clamp(12px, 2vw, 16px);
     width: 100%;
-    max-width: none;
-    height: auto;
     min-height: 96px;
-    padding: 0px clamp(16px, 4vw, 32px) 0px 0px;
-    flex-wrap: nowrap;
+    padding-right: clamp(16px, 4vw, 32px);
 }
 
 .service-card {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 189px;
     height: 96px;
     padding: 48px 14px 8px 16px;
     background-color: rgba(20, 40, 29, 0.08);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 0px;
+    border-radius: 8px 8px 8px 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    outline: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 .service-card:hover {
@@ -462,18 +441,15 @@ button,
     max-width: 500px;
 }
 
-.launch-service-cards {
+/* Unified service cards styles */
+.launch-service-cards,
+.scale-service-cards,
+.knowledge-service-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
     gap: clamp(12px, 2vw, 16px);
     width: 100%;
-    max-width: none;
-    height: auto;
     min-height: 96px;
-    padding: 0px clamp(16px, 4vw, 32px) 0px 0px;
-    flex-wrap: nowrap;
+    padding-right: clamp(16px, 4vw, 32px);
 }
 
 /* Scale Section */
@@ -520,19 +496,7 @@ button,
     max-width: 500px;
 }
 
-.scale-service-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: clamp(12px, 2vw, 16px);
-    width: 100%;
-    max-width: none;
-    height: auto;
-    min-height: 96px;
-    padding: 0px clamp(16px, 4vw, 32px) 0px 0px;
-    flex-wrap: nowrap;
-}
+
 
 .scale-right {
     flex: 1;
@@ -598,19 +562,7 @@ button,
     max-width: 500px;
 }
 
-.knowledge-service-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: clamp(12px, 2vw, 16px);
-    width: 100%;
-    max-width: none;
-    height: auto;
-    min-height: 96px;
-    padding: 0px clamp(16px, 4vw, 32px) 0px 0px;
-    flex-wrap: nowrap;
-}
+
 
 /* Splide Carousel Styles */
 .splide-section {
@@ -627,69 +579,51 @@ button,
     width: 100%;
     max-width: 1280px;
     height: 140px;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    opacity: 1 !important;
-    margin: 0 auto 100px auto !important;
-    gap: 48px !important;
-    background: transparent !important;
-    position: relative !important;
-    z-index: 100 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 100px auto;
+    gap: 48px;
 }
 
 .carousel-title {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 48px !important;
-    line-height: 116% !important;
-    letter-spacing: 0 !important;
-    vertical-align: middle !important;
-    margin-bottom: 0 !important;
-    flex: 0 0 auto !important;
-    color: #000 !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 116%;
+    color: #000;
+    flex: 0 0 auto;
 }
 
 .carousel-title h1 {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 48px !important;
-    line-height: 116% !important;
-    letter-spacing: 0 !important;
-    vertical-align: middle !important;
-    margin: 0 !important;
-    color: #000 !important;
-    display: block !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 116%;
+    margin: 0;
+    color: #000;
 }
 
 .carousel-description {
-    width: 512px !important;
-    max-width: 100vw !important;
-    height: auto !important;
-    opacity: 1 !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 16px !important;
-    line-height: 148% !important;
-    letter-spacing: 0 !important;
-    vertical-align: middle !important;
-    border-left: 2px solid #3A7D5B !important;
-    padding-left: 18px !important;
-    margin-left: 24px !important;
-    flex: 0 0 512px !important;
+    width: 512px;
+    max-width: 100vw;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 148%;
+    border-left: 2px solid #3A7D5B;
+    padding-left: 18px;
+    margin-left: 24px;
+    flex: 0 0 512px;
 }
 
 .carousel-description p {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 16px !important;
-    line-height: 148% !important;
-    letter-spacing: 0 !important;
-    vertical-align: middle !important;
-    margin: 0 !important;
-    color: #000 !important;
-    display: block !important;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 148%;
+    margin: 0;
+    color: #000;
 }
 
 .carousel-container {
@@ -756,10 +690,6 @@ button,
     margin-left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
 }
 
 .testimonials-container {
@@ -808,7 +738,6 @@ button,
 
 .testimonial-card:hover {
     transform: translateY(-4px);
-    animation-play-state: paused;
 }
 
 .testimonial-content {
@@ -833,10 +762,6 @@ button,
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.author-info {
-    flex: 1;
 }
 
 .author-name {

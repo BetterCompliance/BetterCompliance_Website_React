@@ -5,8 +5,6 @@
     width: 100vw;
     height: clamp(60px, 8vh, 88px);
     padding: clamp(12px, 2vh, 24px) clamp(20px, 8vw, 116px);
-    gap: clamp(20px, 12vw, 194px);
-    border-bottom-width: 1px;
     backdrop-filter: blur(8px);
     background: #FEFFF6;
     z-index: 1000;
@@ -14,9 +12,6 @@
     left: 50%;
     transform: translateX(-50%);
     user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 .nav-container {
