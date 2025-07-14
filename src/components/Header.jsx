@@ -2,17 +2,23 @@ import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileDropdown, setMobileDropdown] = useState(null)
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest('.dropdown')) {
         setActiveDropdown(null)
       }
+      if (!e.target.closest('.mobile-menu') && !e.target.closest('.hamburger')) {
+        setMobileMenuOpen(false)
+      }
     }
 
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         setActiveDropdown(null)
+        setMobileMenuOpen(false)
       }
     }
 
@@ -29,6 +35,10 @@ const Header = () => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName)
   }
 
+  const handleMobileDropdownToggle = (dropdownName) => {
+    setMobileDropdown(mobileDropdown === dropdownName ? null : dropdownName)
+  }
+
   const handleLogoClick = () => {
     window.scrollTo({
       top: 0,
@@ -36,13 +46,21 @@ const Header = () => {
     })
   }
 
+  const handleHamburgerClick = (e) => {
+    e.stopPropagation()
+    setMobileMenuOpen((prev) => !prev)
+  }
+
   return (
     <>
       {/* Overlay */}
-      {activeDropdown && (
+      {(activeDropdown || mobileMenuOpen) && (
         <div 
           className="mega-menu-overlay active"
-          onClick={() => setActiveDropdown(null)}
+          onClick={() => {
+            setActiveDropdown(null)
+            setMobileMenuOpen(false)
+          }}
         />
       )}
       
@@ -55,7 +73,15 @@ const Header = () => {
               style={{ width: '244.95px', height: '23.5px' }}
             />
           </div>
-          
+
+          {/* Hamburger Icon */}
+          <div className={`hamburger${mobileMenuOpen ? ' open' : ''}`} onClick={handleHamburgerClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          {/* Desktop Nav */}
           <ul className="nav-menu">
             <li className={`nav-item dropdown ${activeDropdown === 'solutions' ? 'active' : ''}`}>
               <a 
@@ -262,7 +288,92 @@ const Header = () => {
               </div>
             </li>
           </ul>
-          
+
+          {/* Mobile Menu */}
+          <div className={`mobile-menu${mobileMenuOpen ? ' open' : ''}`}>
+            <ul className="mobile-nav-list">
+              <li className={`nav-item dropdown ${mobileDropdown === 'solutions' ? 'active' : ''}`}> 
+                <a 
+                  href="#" 
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleMobileDropdownToggle('solutions')
+                  }}
+                >
+                  Solutions
+                  <i className="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                {mobileDropdown === 'solutions' && (
+                  <div className="mobile-dropdown-menu">
+                    <a href="#" className="mobile-dropdown-item">Business Setup & Secretarial Support</a>
+                    <a href="#" className="mobile-dropdown-item">Bookkeeping & Compliance</a>
+                    <a href="#" className="mobile-dropdown-item">Allied Business (LAW) Services</a>
+                    <a href="#" className="mobile-dropdown-item">Talent Acquisition</a>
+                    <a href="#" className="mobile-dropdown-item">Payroll Management</a>
+                    <a href="#" className="mobile-dropdown-item">Employer of Record (EOR)</a>
+                    <a href="#" className="mobile-dropdown-item">Insurance & Benefits</a>
+                    <a href="#" className="mobile-dropdown-item">Workspace Solutions</a>
+                    <a href="#" className="mobile-dropdown-item">Information Technology Infrastructure</a>
+                  </div>
+                )}
+              </li>
+              <li className={`nav-item dropdown ${mobileDropdown === 'engagement' ? 'active' : ''}`}> 
+                <a 
+                  href="#" 
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleMobileDropdownToggle('engagement')
+                  }}
+                >
+                  Engagement Suits
+                  <i className="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                {mobileDropdown === 'engagement' && (
+                  <div className="mobile-dropdown-menu">
+                    <a href="#" className="mobile-dropdown-item">Compliant Global Centers</a>
+                    <a href="#" className="mobile-dropdown-item">Build Operate Comply</a>
+                    <a href="#" className="mobile-dropdown-item">Manage Compliant Teams</a>
+                  </div>
+                )}
+              </li>
+              <li className="nav-item">
+                <a href="#about" className="nav-link">Industries</a>
+              </li>
+              <li className={`nav-item dropdown company-dropdown ${mobileDropdown === 'company' ? 'active' : ''}`}> 
+                <a 
+                  href="#" 
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleMobileDropdownToggle('company')
+                  }}
+                >
+                  Company
+                  <i className="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                {mobileDropdown === 'company' && (
+                  <div className="mobile-dropdown-menu">
+                    <a href="#" className="mobile-dropdown-item">About Us</a>
+                    <a href="#" className="mobile-dropdown-item">Careers</a>
+                    <a href="#" className="mobile-dropdown-item">Contact</a>
+                    <a href="#" className="mobile-dropdown-item">Articles</a>
+                    <a href="#" className="mobile-dropdown-item">Community</a>
+                  </div>
+                )}
+              </li>
+              <li className="nav-item mobile-contact">
+                <button className="mobile-cta">Let's Talk to Expert</button>
+              </li>
+              <li className="nav-item mobile-language">
+                <select>
+                  <option value="English">En</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+
           <div className="nav-contact">
             <span className="cta-btn-small">
               <button>Let's Talk to Expert</button>

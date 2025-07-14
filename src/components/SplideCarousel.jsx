@@ -38,7 +38,7 @@ const SplideCarousel = () => {
     perPage: 3,
     focus: 'center',
     gap: '24px',
-    padding: { left: '10%', right: '10%' },
+    padding: { left: '22%', right: '10%' },
     pagination: true,
     arrows: true,
     autoplay: true,

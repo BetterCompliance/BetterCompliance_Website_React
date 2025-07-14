@@ -195,7 +195,7 @@ button,
 }
 
 .marquee-wrapper-content {
-    width: 1280px;
+    width: min(1280px, 95vw);
     height: 56px;
     gap: 48px;
     border-bottom-width: 1px;
@@ -203,6 +203,9 @@ button,
     grid-template-columns: 192px 1fr;
     align-items: center;
     background: transparent;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 32px;
 }
 
 .marquee-text {
@@ -233,29 +236,34 @@ button,
     position: relative;
 }
 
+/* --- Marquee Seamless Scroll Fix --- */
 .marquee-content {
-    height: 56px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scroll-left 20s linear infinite;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: transparent;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /* Remove width: 100% so content can overflow for animation */
 }
-
 .logo-icon {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: transparent;
+  min-width: 100%;
+  white-space: nowrap;
 }
 
 .marquee-content img {
-    height: 80px;
-    margin: 0 30px;
+    height: 56px;
+    margin: 0 24px;
     vertical-align: middle;
+    max-width: 120px;
+    object-fit: contain;
 }
 
 @keyframes scroll-left {
@@ -624,6 +632,7 @@ button,
     line-height: 148%;
     margin: 0;
     color: #000;
+    opacity: 60%;
 }
 
 .carousel-container {
@@ -634,11 +643,14 @@ button,
 
 .slider-card {
     position: relative;
-    border-radius: 12px;
     overflow: hidden;
     height: 300px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 352px;
+    height: 448px;
+    border-radius: 8px;
+    opacity: 1;
 }
 
 .slider-card:hover {
@@ -978,6 +990,94 @@ button,
     }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 32px;
+    min-height: 340px;
+    align-items: flex-start;
+  }
+  .hero-container {
+    width: 100vw;
+    min-width: 0;
+    height: clamp(220px, 60vh, 400px);
+    border-radius: 0;
+    padding: 0 8px;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-content {
+    position: static;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 0 8px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .hero-title {
+    width: 100%;
+    height: auto;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .highlight {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+    line-height: 1.2;
+    word-break: break-word;
+    padding: 0 2px;
+  }
+  .hero-description {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    margin: 0 0 8px 0;
+    text-align: center;
+    padding: 0 2px;
+  }
+  .hero-buttons {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 20px;
+    min-height: 220px;
+  }
+  .hero-container {
+    width: 100vw;
+    min-width: 0;
+    height: clamp(180px, 50vh, 320px);
+    border-radius: 0;
+    padding: 0 4px;
+  }
+  .hero-content {
+    padding: 0 4px;
+    gap: 10px;
+  }
+  .hero-title {
+    font-size: clamp(1.1rem, 7vw, 1.5rem);
+  }
+  .highlight {
+    font-size: clamp(1.1rem, 8vw, 1.5rem);
+    padding: 0 1px;
+  }
+  .hero-description {
+    font-size: clamp(0.95rem, 4vw, 1rem);
+    padding: 0 1px;
+  }
+}
+
 /* Small Mobile Responsive Design */
 @media (max-width: 480px) {
     /* Navigation */
@@ -1058,4 +1158,84 @@ button,
     }
 }
 
+/* --- Responsive Polish & Tweaks --- */
 
+/* Ensure all images are responsive */
+img, .slider-card-img, .herosec-main-image, .launch-main-image, .scale-main-image, .knowledge-main-image, .footer-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* Footer: stack columns vertically on mobile */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 0;
+  }
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 16px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  .footer-brand {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 24px;
+  }
+}
+
+
+
+/* Section: ensure no overflow and good spacing */
+.herosec-hero3, .launch-section, .knowledge-section, .scale-section, .splide-section, .testimonials-section, .section-separator-content {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Service cards: touch-friendly */
+.service-card {
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* Carousel: ensure no overflow */
+.carousel-container {
+  overflow-x: hidden;
+}
+
+/* Testimonials: touch-friendly cards */
+.testimonial-card {
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* Marquee: prevent overflow */
+.marquee-wrapper, .marquee-content {
+  overflow-x: hidden;
+}
+
+
+/* Remove margin-bottom for last section */
+section:last-child, .section-separator-content:last-child {
+  margin-bottom: 0;
+}
