@@ -6,15 +6,7 @@ import './styles/header.css'
 import './styles/footer.css'
 
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Marquee from './components/Marquee'
-import HeroSection3 from './components/HeroSection3'
-import LaunchSection from './components/LaunchSection'
-import ScaleSection from './components/ScaleSection'
-import KnowledgeSection from './components/KnowledgeSection'
-import SplideCarousel from './components/SplideCarousel'
-import Testimonials from './components/Testimonials'
-import SectionSeparator from './components/SectionSeparator'
+import MainContent from './components/MainContent'
 import Footer from './components/Footer'
 import useSmoothScroll from './hooks/useSmoothScroll'
 
@@ -70,15 +62,7 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Marquee />
-      <HeroSection3 />
-      <LaunchSection />
-      <ScaleSection />
-      <KnowledgeSection />
-      <SplideCarousel />
-      <Testimonials />
-      <SectionSeparator />
+      <MainContent />
       <Footer />
     </>
   )

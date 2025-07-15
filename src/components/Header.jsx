@@ -4,6 +4,7 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileDropdown, setMobileDropdown] = useState(null)
+  const [isNavbarBlack, setIsNavbarBlack] = useState(false)
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -25,9 +26,23 @@ const Header = () => {
     document.addEventListener('click', handleClickOutside)
     document.addEventListener('keydown', handleEscape)
 
+    // Listen for navbar-black class changes
+    const navbar = document.querySelector('.navbar')
+    const checkNavbarBlack = () => {
+      if (navbar && navbar.classList.contains('navbar-black')) {
+        setIsNavbarBlack(true)
+      } else {
+        setIsNavbarBlack(false)
+      }
+    }
+    window.addEventListener('scroll', checkNavbarBlack)
+    // Initial check
+    checkNavbarBlack()
+
     return () => {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEscape)
+      window.removeEventListener('scroll', checkNavbarBlack)
     }
   }, [])
 
@@ -68,7 +83,7 @@ const Header = () => {
         <div className="nav-container">
           <div className="nav-logo" onClick={handleLogoClick}>
             <img 
-              src="/assets/Images/Component 2.svg" 
+              src={isNavbarBlack ? "/assets/Images/Component 2 (1).svg" : "/assets/Images/Component 2.svg"}
               alt="YourBrand Logo" 
               style={{ width: '244.95px', height: '23.5px' }}
             />

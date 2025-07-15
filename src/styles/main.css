@@ -519,7 +519,7 @@ button,
 /* Knowledge Section */
 .knowledge-section {
     width: 100vw;
-    padding: 48px 0px 144px 0px;
+    padding: 48px 0px 0px 0px;
     background-color: #fffff6;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -533,6 +533,7 @@ button,
     display: flex;
     align-items: center;
     gap: 60px;
+    margin-bottom: 122px;
 }
 
 .knowledge-left {
@@ -547,6 +548,11 @@ button,
 
 .knowledge-right {
     flex: 1;
+    background: #fffff6;
+}
+
+.black-bg-active .knowledge-right {
+  background: #fffff6 !important;
 }
 
 .knowledge-texts {
