@@ -1,12 +1,12 @@
 # Better Compliance Website - React + Vite
 
-This project has been successfully converted from a static HTML website to a modern React application using Vite as the build tool.
+This project is a modern React application (using Vite) that replicates the original Better Compliance static HTML website, with modular components and a focus on maintainability and performance.
 
 ## 🚀 Features
 
 - **React Components**: Modular, reusable components for all sections
 - **Vite Build Tool**: Fast development and optimized production builds
-- **AOS Animations**: Smooth scroll animations maintained from original
+- **AOS Animations**: Smooth scroll animations for select sections (not the Knowledge section)
 - **Splide Carousel**: Interactive carousel for industry showcase
 - **Testimonials Marquee**: Auto-scrolling testimonials with hover pause
 - **Responsive Design**: Mobile-first responsive layout
@@ -24,7 +24,7 @@ src/
 │   ├── HeroSection3.jsx # Services overview
 │   ├── LaunchSection.jsx # Launch faster section
 │   ├── ScaleSection.jsx # Scale section
-│   ├── KnowledgeSection.jsx # Knowledge section
+│   ├── MainContent.jsx # Main content (includes Knowledge section)
 │   ├── SplideCarousel.jsx # Industry carousel
 │   ├── Testimonials.jsx # Testimonials marquee
 │   ├── SectionSeparator.jsx # CTA section
@@ -70,7 +70,7 @@ src/
 
 ### Libraries
 - **@splidejs/react-splide**: Carousel component
-- **AOS (Animate On Scroll)**: Scroll animations
+- **AOS (Animate On Scroll)**: Scroll animations (not used in Knowledge section)
 - **Font Awesome**: Icon library
 
 ## 🎨 Styling
@@ -79,7 +79,7 @@ The project maintains the exact same visual design as the original HTML version:
 
 - **CSS Architecture**: Modular CSS files for different sections
 - **Responsive Design**: Mobile-first approach with breakpoints
-- **Animations**: AOS animations and custom CSS transitions
+- **Animations**: AOS animations and custom CSS transitions (not in Knowledge section)
 - **Typography**: Google Fonts (Inter, Raleway, Plus Jakarta Sans)
 
 ## 🔧 Key Features Implemented
@@ -91,7 +91,7 @@ The project maintains the exact same visual design as the original HTML version:
 - ✅ Mobile responsive navigation
 
 ### Animations
-- ✅ AOS scroll animations
+- ✅ AOS scroll animations (not in Knowledge section)
 - ✅ Testimonials auto-scroll marquee with hover pause
 - ✅ Logo marquee animation
 - ✅ Hover effects on service cards
@@ -133,7 +133,7 @@ The project is ready for deployment to any static hosting service:
 
 This React conversion maintains 100% visual and functional parity with the original HTML version:
 
-- All animations and interactions preserved
+- All animations and interactions preserved (except Knowledge section, which is static)
 - Exact same styling and layout
 - All external dependencies maintained
 - Performance optimized with modern tooling
