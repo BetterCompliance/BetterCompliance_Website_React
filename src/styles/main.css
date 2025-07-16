@@ -938,62 +938,148 @@ button,
     }
 }
 
-/* Mobile Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet: Launch/Knowledge containers, padding/margin tweaks */
+  .launch-container,
+  .knowledge-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .splide-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background: #fffff6;
+    padding: 0;
+  }
+  .carousel-description {
+    flex: none;
+  }
+  .splide__track--draggable {
+    margin-top: 100px;
+  }
+  .carousel-header-container {
+    /* margin-bottom: 120px; */
+  }
+  .testimonials-header {
+    font-size: 1.1rem;
+  }
+  .section-separator-content {
+    padding: 0;
+    height: 240px;
+  }
+  .section-separator-h1 {
+    width: auto;
+  }
+  .section-separator-btn {
+    width: auto;
+  }
+  .testimonials-header h2 {
+    margin: auto;
+  }
+}
+
 @media (max-width: 768px) {
-    /* Navigation */
-    .navbar {
-        padding: 16px 24px;
-    }
+  /* Navigation */
+  .navbar {
+      padding: 16px 24px;
+  }
 
-    .nav-menu {
-        display: none;
-    }
+  .nav-menu {
+      display: none;
+  }
 
-    /* Sections padding */
-    .herosec-hero3,
-    .launch-section,
-    .knowledge-section,
-    .scale-section {
-        padding: 60px 0;
-    }
+  /* Sections padding */
+  .herosec-hero3,
+  .launch-section,
+  .knowledge-section,
+  .scale-section {
+      padding: 60px 0;
+  }
 
-    /* Typography for mobile */
-    .hero-title,
-    .herosec-text24,
-    .launch-title,
-    .scale-title,
-    .knowledge-title {
-        font-size: clamp(1.75rem, 6vw, 2.5rem);
-    }
+  /* Typography for mobile */
+  .hero-title,
+  .herosec-text24,
+  .launch-title,
+  .scale-title,
+  .knowledge-title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
 
-    .testimonials-header h2 {
-        font-size: clamp(1.75rem, 6vw, 2.5rem);
-    }
+  .testimonials-header h2 {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
 
-    /* Carousel mobile */
-    .carousel-header-container {
-        padding: 50px 24px 40px 24px;
-    }
+  /* Carousel mobile */
+  .carousel-header-container {
+      padding: 50px 24px 40px 24px;
+  }
 
-    /* Section separator mobile */
-    .section-separator-content {
-        padding: 60px 24px;
-    }
+  /* Section separator mobile */
+  .section-separator-content {
+      padding: 60px 24px;
+  }
 
-    .section-separator-h1 {
-        font-size: clamp(24px, 6vw, 32px);
-    }
+  .section-separator-h1 {
+      font-size: clamp(24px, 6vw, 32px);
+  }
 
-    /* Testimonials mobile */
-    .testimonial-card {
-        flex: 0 0 300px;
-    }
+  /* Testimonials mobile */
+  .testimonial-card {
+      flex: 0 0 300px;
+  }
 
-    /* Hero container mobile */
-    .hero-container {
-        width: min(400px, 95vw);
-        height: clamp(300px, 60vh, 450px);
-    }
+  /* Hero container mobile */
+ 
+}
+
+@media (max-width: 768px) {
+  /* Tablet portrait: Launch/Knowledge containers, padding/margin tweaks */
+  .launch-container,
+  .knowledge-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .splide-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background: #fffff6;
+    padding: 0;
+  }
+  .carousel-description {
+    flex: none;
+  }
+  .splide__track--draggable {
+    margin-top: 120px;
+  }
+  .carousel-header-container {
+    /* margin-bottom: 140px; */
+  }
+  .testimonials-header {
+    font-size: 1rem;
+  }
+  .section-separator-content {
+    padding: 0;
+    height: 220px;
+  }
+  .section-separator-h1 {
+    width: auto;
+  }
+  .section-separator-btn {
+    width: auto;
+  }
+  .testimonials-header h2 {
+    margin: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1055,113 +1141,191 @@ button,
   }
 }
 
+/* --- Combined Mobile Styles for max-width: 480px --- */
 @media (max-width: 480px) {
+  /* Hero Section */
   .hero {
-    padding-top: 20px;
-    min-height: 220px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    min-height: 320px !important;
+    height: 90vh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background: #fffff6 !important;
   }
   .hero-container {
-    width: 100vw;
-    min-width: 0;
-    height: clamp(180px, 50vh, 320px);
-    border-radius: 0;
-    padding: 0 4px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    height: 90vh !important;
+    min-height: 320px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background-size: cover !important;
+    background-position: 70% 70% !important;
   }
   .hero-content {
-    padding: 0 4px;
-    gap: 10px;
+    position: static !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    height: auto !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    text-align: center !important;
+    margin-bottom: 90px;
   }
   .hero-title {
-    font-size: clamp(1.1rem, 7vw, 1.5rem);
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    font-size: clamp(1.1rem, 7vw, 1.5rem) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    word-break: break-word !important;
+  }
+  .hero-buttons {
+    width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
   }
   .highlight {
-    font-size: clamp(1.1rem, 8vw, 1.5rem);
-    padding: 0 1px;
+    font-size: clamp(1.1rem, 8vw, 1.5rem) !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    padding: 0 2px !important;
   }
   .hero-description {
-    font-size: clamp(0.95rem, 4vw, 1rem);
-    padding: 0 1px;
+    font-size: clamp(0.95rem, 4vw, 1rem) !important;
+    margin: 0 0 8px 0 !important;
+    text-align: center !important;
+    padding: 0 2px !important;
   }
+
+  /* Marquee Section */
+  .marquee-wrapper {
+    height: auto !important;
+    min-height: 80px !important;
+    padding: 12px 0 12px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .marquee-wrapper-content {
+    width: 100vw !important;
+    min-width: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+    border-bottom-width: 0 !important;
+  }
+  .marquee-text {
+    width: 100% !important;
+    height: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 4px !important;
+    order: 1 !important;
+  }
+  .marquee-animation-area {
+    width: 100vw !important;
+    min-width: 0 !important;
+    height: 56px !important;
+    order: 2 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  .logo-icon {
+    gap: 24px !important;
+    min-width: 100vw !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+  .marquee-content img {
+    height: 40px !important;
+    max-width: 80px !important;
+    margin: 0 8px !important;
+  }
+
+  /* Launch and Knowledge Section Column Reverse */
+  .launch-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+  }
+  .knowledge-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  /* Splide Section */
+  .splide-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background: #fffff6;
+    padding: 0%;
+  }
+
+  .carousel-description{
+    flex: none;
+  }
+  .splide__track--draggable{
+    margin-top: 150px;
+  }
+  .carousel-header-container{
+    /* margin-bottom: 200px; */
+  }
+.testimonials-header{
+    font-size: medium;
 }
 
-/* Small Mobile Responsive Design */
-@media (max-width: 480px) {
-    /* Navigation */
-    .navbar {
-        padding: 12px 20px;
-    }
-
-    /* Sections padding */
-    .herosec-hero3,
-    .launch-section,
-    .knowledge-section,
-    .scale-section {
-        padding: 40px 0;
-    }
-
-    /* Typography for small mobile */
-    .hero-title,
-    .herosec-text24,
-    .launch-title,
-    .scale-title,
-    .knowledge-title {
-        font-size: clamp(1.5rem, 7vw, 2rem);
-    }
-
-    .herosec-text28,
-    .launch-subtitle,
-    .knowledge-subtitle,
-    .scale-subtitle {
-        font-size: clamp(0.875rem, 4vw, 1rem);
-    }
-
-    .testimonials-header h2 {
-        font-size: clamp(1.5rem, 7vw, 2rem);
-    }
-
-    /* Service cards smaller */
-    .service-card {
-        max-width: 300px;
-        padding: 32px 12px 8px 12px;
-    }
-
-    /* Carousel small mobile */
-    .carousel-header-container {
-        padding: 40px 20px 32px 20px;
-    }
-
-    /* Section separator small mobile */
-    .section-separator-content {
-        padding: 40px 20px;
-    }
-
-    .section-separator-h1 {
-        font-size: clamp(20px, 7vw, 28px);
-    }
-
-    /* Testimonials small mobile */
-    .testimonial-card {
-        flex: 0 0 280px;
-    }
-
-    /* Hero container small mobile */
-    .hero-container {
-        width: min(320px, 95vw);
-        height: clamp(250px, 50vh, 400px);
-    }
-
-    /* Hero content adjustments */
-    .hero-content {
-        width: 90%;
-        left: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .hero-title {
-        width: 100%;
-        height: auto;
-    }
+.section-separator-content{
+    padding: 0%;
+    height: 200px;
+}
+.section-separator-h1 {
+    width: auto;
+}
+.section-separator-btn {
+    width: auto;
+}
+.testimonials-header h2 {
+    margin: auto;
+}
 }
 
 /* --- Responsive Polish & Tweaks --- */
