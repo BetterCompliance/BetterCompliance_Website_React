@@ -177,7 +177,7 @@ const Header = () => {
 
                   {/* Human Resource Column 2 */}
                   <div className="mega-menu-column">
-                    <h4 className="mega-menu-category">HUMAN RESOURCE</h4>
+                    <h4 className="mega-menu-category">OFFICE & BENEFITS</h4>
                     <div className="mega-menu-items">
                       <a href="#" className="mega-menu-item">
                         <div className="menu-item-icon">

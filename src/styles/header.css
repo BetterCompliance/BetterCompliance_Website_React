@@ -136,7 +136,7 @@
     justify-content: center;
     align-items: center;
     gap: 96px;
-    width: 1232px;
+    width: 900px;
     height: 299px;
     padding: 40px;
     background-color: rgba(254, 255, 248, 0.98);
@@ -147,6 +147,7 @@
     transition: all 0.3s ease;
     z-index: 1000;
     margin-top: 50px;
+    padding : 30px;
 }
 
 .mega-menu.active {
@@ -554,7 +555,7 @@
   width: 80vw;
   max-width: 340px;
   height: 100vh;
-  background: #fff;
+  background: #fffff6;
   box-shadow: -2px 0 24px rgba(0,0,0,0.08);
   z-index: 1100;
   transform: translateX(100%);
@@ -565,6 +566,7 @@
 .mobile-menu.open {
   display: block;
   transform: translateX(0);
+  background: #fffff6;
 }
 .mobile-nav-list {
   list-style: none;
@@ -606,7 +608,7 @@
 }
 
 .mobile-dropdown-menu {
-  background: #f8fafc;
+  background: #fffff6;
   border-radius: 8px;
   margin: 8px 0 8px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);

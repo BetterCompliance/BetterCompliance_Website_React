@@ -3,6 +3,7 @@ import AOS from 'aos'
 import '@splidejs/react-splide/css'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ServiceSection from './ServiceSection'
 
 // --- Hero Section ---
 const Hero = () => (
@@ -60,158 +61,10 @@ const Marquee = () => {
   )
 }
 
-// --- Hero Section 3 ---
-const HeroSection3 = () => {
-  const serviceCards = [
-    { title: "Finance &", subtitle: "Legal", delay: 50 },
-    { title: "Human", subtitle: "Resource", delay: 100 },
-    { title: "Office &", subtitle: "Workforce", delay: 150 },
-  ]
-  return (
-    <div className="herosec-hero3">
-      <div className="herosec-maincntnr2">
-        <div className="herosec-left-content">
-          <div className="herosec-texts" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800">
-            <span className="herosec-text24">
-              <span>Everything You Need,</span>
-              <br />
-              <span>In One Place</span>
-            </span>
-            <span className="herosec-text28">
-              Forget the patchwork. We handle setup, hiring, compliance, and offices — so you can build boldly in India without looking back.
-            </span>
-          </div>
-          <div className="herosec-service-cards">
-            {serviceCards.map((card, index) => (
-              <div key={index} className="service-card" data-aos="zoom-in" data-aos-delay={card.delay}>
-                <div className="service-title">
-                  <span className="service-title-content">
-                    {card.title} <br /> {card.subtitle}
-                  </span>
-                </div>
-                <i className="fas fa-arrow-right service-arrow"></i>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="herosec-right-content" data-aos="fade-left" data-aos-duration="500">
-          <img src="/assets/Images/imgcntnr.svg" alt="Business woman working" className="herosec-main-image" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// --- Launch Section ---
-const LaunchSection = () => {
-  const serviceCards = [
-    { title: "Compliant", subtitle: "Global Centers", delay: 50 },
-    { title: "Build Operate", subtitle: "Comply", delay: 100 },
-    { title: "Manage", subtitle: "Compliant Team", delay: 150 },
-  ]
-  return (
-    <div className="launch-section">
-      <div className="launch-container">
-        <div className="launch-left" data-aos="fade-right" data-aos-duration="500">
-          <img src="/assets/Images/imgcntnr (1).svg" alt="Business team meeting" className="launch-main-image" />
-        </div>
-        <div className="launch-right">
-          <div className="launch-texts" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800">
-            <span className="launch-title">
-              <span>Launch Faster.</span>
-              <br />
-              <span>Grow Smarter.</span>
-            </span>
-            <span className="launch-subtitle">
-              Our engagement models get your Global Capability Center up and running quickly — with less risk, fewer delays, and full compliance.
-            </span>
-          </div>
-          <div className="launch-service-cards">
-            {serviceCards.map((card, index) => (
-              <div key={index} className="service-card" data-aos="zoom-in" data-aos-delay={card.delay}>
-                <div className="service-title">
-                  <span className="service-title-content">
-                    {card.title} <br /> {card.subtitle}
-                  </span>
-                </div>
-                <i className="fas fa-arrow-right service-arrow"></i>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// --- Scale Section ---
-const ScaleSection = () => (
-  <div className="scale-section">
-    <div className="scale-container">
-      <div className="scale-left">
-        <div className="scale-texts" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800">
-          <span className="scale-title">
-            <span>Start Small,</span>
-            <br />
-            <span>Scale Big</span>
-          </span>
-          <span className="scale-subtitle">
-            Whether you're hiring your first employee in India or relocating an expat, we take care of your compliance and ensure your India operations scale smoothly.
-          </span>
-        </div>
-        <div className="scale-service-cards">
-          <div className="service-card" data-aos="zoom-in" data-aos-delay="50">
-            <div className="service-title">
-              <span className="service-title-content">Read<br />Articles</span>
-            </div>
-            <i className="fas fa-arrow-right service-arrow"></i>
-          </div>
-        </div>
-      </div>
-      <div className="scale-right" data-aos="fade-left" data-aos-duration="500">
-        <img src="/assets/Images/imgcntnr (2).svg" alt="Business women working" className="scale-main-image" />
-      </div>
-    </div>
-  </div>
-)
-
-// --- Knowledge Section (with animated text tied to trigger) ---
-
-const KnowledgeSection = () => {
-  const sectionRef = useRef(null)
-  return (
-    <div className="knowledge-section" ref={sectionRef} style={{ position: 'relative' }}>
-      <div className="knowledge-container">
-        <div className="knowledge-left" data-aos="fade-right" data-aos-duration="500">
-          <img src="/assets/Images/imgcntnr (3).svg" alt="Business team meeting" className="knowledge-main-image" />
-        </div>
-        <div className="knowledge-right">
-          <div className="knowledge-texts" data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom" data-aos-duration="800">
-            <span className="knowledge-title">
-              <span>Local Knowledge.</span>
-              <br />
-              <span>Global Excellence.</span>
-            </span>
-            <span className="knowledge-subtitle">
-              We combine deep understanding of Indian regulations with world-class service standards — ensuring your business stays compliant, competitive, and confident.
-            </span>
-          </div>
-          <div className="knowledge-service-cards">
-            <div className="service-card" data-aos="zoom-in" data-aos-delay="50">
-              <div className="service-title">
-                <span className="service-title-content">Meet Our <br />Experts</span>
-              </div>
-              <i className="fas fa-arrow-right service-arrow"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // --- Splide Carousel Section ---
+{/*}
 import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 const SplideCarousel = () => {
   const slides = [
     { id: 1, image: "/assets/Images/imgcntnr.svg", alt: "Health Care", number: "001", category: "Health\nCare" },
@@ -223,22 +76,23 @@ const SplideCarousel = () => {
     type: 'loop',
     perPage: 3,
     focus: 'center',
-    gap: '24px',
-    padding: { left: '22%', right: '10%' },
+    gap: '32px',
+    padding: { left: '10%', right: '10%' },
     pagination: true,
     arrows: true,
     autoplay: true,
-    interval: 10000,
+    interval: 8000,
     pauseOnHover: true,
     pauseOnFocus: true,
     resetProgress: false,
     breakpoints: {
-      1024: { perPage: 2, padding: { left: '5%', right: '5%' } },
-      600: { perPage: 1, padding: { left: '10%', right: '10%' } }
+      1200: { perPage: 2, padding: { left: '5%', right: '5%' }, gap: '24px' },
+      900: { perPage: 1, padding: { left: '10%', right: '10%' }, gap: '12px' },
+      600: { perPage: 1, padding: { left: '2%', right: '2%' }, gap: '6px' }
     }
   }
   return (
-    <section className="splide-section" role="group" aria-label="Splide Basic HTML Example">
+    <section className="splide-section" role="group" aria-label="Industry Showcase Carousel">
       <div className="carousel-header-container">
         <div className="carousel-title">
           <h1>Where we can <br />make a difference.</h1>
@@ -248,7 +102,7 @@ const SplideCarousel = () => {
         </div>
       </div>
       <div className="carousel-container">
-        <Splide options={splideOptions}>
+        <Splide options={splideOptions} aria-label="Industry Showcase Carousel">
           {slides.map((slide) => (
             <SplideSlide key={slide.id}>
               <div className="slider-card">
@@ -269,9 +123,11 @@ const SplideCarousel = () => {
       </div>
     </section>
   )
-}
+} 
+*/}
 
 // --- Testimonials Section ---
+{/*}
 const Testimonials = () => {
   const trackRef = useRef(null)
   const testimonials = [
@@ -343,6 +199,7 @@ const Testimonials = () => {
     </section>
   )
 }
+*/}
 
 // --- Section Separator ---
 const SectionSeparator = () => (
@@ -368,12 +225,64 @@ const MainContent = () => {
       {/* Main site content follows */}
       <Hero />
       <Marquee />
-      <HeroSection3 />
-      <LaunchSection />
-      <ScaleSection />
-      <KnowledgeSection />
+      {/* Service Sections unified */}
+      <ServiceSection
+        sectionType="herosec"
+        title="Everything You Need,"
+        subtitle="In One Place"
+        description="Forget the patchwork. We handle setup, hiring, compliance, and offices — so you can build boldly in India without looking back."
+        serviceCards={[
+          { title: 'Finance &', subtitle: 'Legal', delay: 50 },
+          { title: 'Human', subtitle: 'Resource', delay: 100 },
+          { title: 'Office &', subtitle: 'Workforce', delay: 150 },
+        ]}
+        imageSrc="/assets/Images/imgcntnr.svg"
+        imageAlt="Business woman working"
+        imagePosition="right"
+      />
+      <ServiceSection
+        sectionType="launch"
+        title="Launch Faster."
+        subtitle="Grow Smarter."
+        description="Our engagement models get your Global Capability Center up and running quickly — with less risk, fewer delays, and full compliance."
+        serviceCards={[
+          { title: 'Compliant', subtitle: 'Global Centers', delay: 50 },
+          { title: 'Build Operate', subtitle: 'Comply', delay: 100 },
+          { title: 'Manage', subtitle: 'Compliant Team', delay: 150 },
+        ]}
+        imageSrc="/assets/Images/imgcntnr (1).svg"
+        imageAlt="Business team meeting"
+        imagePosition="left"
+      />
+      <ServiceSection
+        sectionType="scale"
+        title="Start Small,"
+        subtitle="Scale Big"
+        description="Whether you're hiring your first employee in India or relocating an expat, we take care of your compliance and ensure your India operations scale smoothly."
+        serviceCards={[
+          { title: 'Read', subtitle: 'Articles', delay: 50 },
+        ]}
+        imageSrc="/assets/Images/imgcntnr (2).svg"
+        imageAlt="Business women working"
+        imagePosition="right"
+      />
+      <ServiceSection
+        sectionType="knowledge"
+        title="Local Knowledge."
+        subtitle="Global Excellence."
+        description="We combine deep understanding of Indian regulations with world-class service standards — ensuring your business stays compliant, competitive, and confident."
+        serviceCards={[
+          { title: 'Meet Our', subtitle: 'Experts', delay: 50 },
+        ]}
+        imageSrc="/assets/Images/imgcntnr (3).svg"
+        imageAlt="Business team meeting"
+        imagePosition="left"
+      />
+      {/* End Service Sections */}
+      {/*
       <SplideCarousel />
       <Testimonials />
+      */}
       <SectionSeparator />
     </>
   )
